@@ -4,7 +4,6 @@ mysql_db = MySQLDatabase('u522633204_buddy_bet', user='u522633204_buddy_bet', pa
                          host='sql927.main-hosting.eu')
 
 class Community(Model):
-    id = UUIDField(primary_key=True)
     name = CharField(max_length=100)
 
     class Meta:
