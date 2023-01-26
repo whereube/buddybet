@@ -2,10 +2,18 @@ from flask import Flask
 from user import User
 import uuid
 from bet import Bet
+from flask_cors import CORS
 
+app = Flask(__name__)
+CORS(app)
+
+
+@app.route("/test", methods=['GET'])
 def create_user():
-    grandma = Bet.create(description='jag vill betta med dig')
-    for person in Bet.select():
-        print(person.description)
+    result = []
+    for bet in Bet.select():
+        result.append(bet.description)
+    return result
 
-create_user()
+if __name__ == '__main__':
+    app.run()
