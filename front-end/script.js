@@ -1,24 +1,5 @@
-/*
-function createUser() {
-  $.ajax({
-    type: "POST",
-    url: "http://localhost/create_user",
-    data: {
-        "name": $("#name").val(),
-        "email": $("#email").val(),
-        "password": $("#password").val()
-      },
-      success: function(response) {
-          console.log("User created successfully");
-      },
-      error: function(xhr, status, error) {
-          console.log("Error creating user: " + error);
-      }
-  });
 
-  console.log("hit")
-}
-*/
+
 
 $(document).ready(function(){
 
@@ -33,13 +14,17 @@ $(document).ready(function(){
         "email": $('#email').val(),
         "password": $('#password').val()
       }
+      // success: function(data) {
+      //   console.log(data); 
+      // },
+      // error: function(xhr, status, error) {
+      //     console.log("Error creating user: " + error);
+      // }
     })
-    .done(console.log("skickat"));
+    $('.hidden-div').empty();
+    var head = $('<p>').text('Användare skapad');
+    $('.hidden-div').append(head);
   });
-
-  // $("#createForm").submit(function(){
-  //   alert("funkar")
-  // });
 });
 
 

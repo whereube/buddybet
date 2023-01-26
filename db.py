@@ -22,7 +22,7 @@ mysql_db.create_tables([Bet])
 def create_user_in_bd(name, password, email):
     print("i databsen")
     User.create(name=name, password=password, email=email)
-    return print("success")
+    return "Användare skapad"
 
 
 

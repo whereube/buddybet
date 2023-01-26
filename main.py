@@ -3,11 +3,10 @@ from user import User
 import uuid
 from bet import Bet
 from flask_cors import CORS
-from db import create_user_in_bd
+from db import *
 
 app = Flask(__name__)
 CORS(app)
-
 
 @app.route("/create_user", methods=['POST'])
 def create_user():
@@ -16,10 +15,9 @@ def create_user():
     password = request.headers.get("password")
     email = request.headers.get("email")
     print(name)
-    create_user_in_bd(name, password, email)
-    return "User created"
+    response = create_user_in_bd(name, password, email)
+    return response
     
-
 
 if __name__ == '__main__':
     app.run()
